@@ -59,7 +59,7 @@ function myfunction1 (event){ // delete and modify options function inside each 
       //tasklist.splice(newindex, 1);
       console.log('tasklist after delete ' + tasklist1); 
     }
-    if (clicked == 'Modify') {
+    if (clicked == 'Modify') { // place every data i its place to be changed
 
         formcont.style.display = "block";
         formcont.style.position = "absolute";
@@ -79,9 +79,7 @@ function myfunction1 (event){ // delete and modify options function inside each 
           if (x == 'description'){document.getElementById('descripin').value = [tasklist1[newindex][x]];}
           if (x == 'date'){document.getElementById('datein').value = [tasklist1[newindex][x]];}
         }
-
         document.getElementById('addtask').textContent = 'Modify2';
-
     }
 
   var myjson = JSON.stringify(tasklist1);
