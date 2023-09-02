@@ -37,11 +37,11 @@ function windowonload(){
   //return;
 }
 
-window.onerror = function() {
-  console.log('a error has occurred index');
-  //location.reload();
-  //one();
-}
+// window.onerror = function() {
+//   console.log('a error has occurred index');
+//   //location.reload();
+//   //one();
+// }
 
 document.body.style.display = 'flex';
 document.body.style.justifyContent = 'center';

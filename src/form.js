@@ -1,6 +1,6 @@
 import {formdisplay} from './formdisplay.js'; // allows read the Add Task and cancel's button
 import {objectdisp} from './newtask.js'; // goes to newtask after click on accept button
-
+import {myfunction1} from './menutask.js';
 
 var formcont = document.createElement('div'); // it'll contain form but with blur filter
   formcont.style.display = 'flex';
@@ -75,11 +75,19 @@ var addcancel = document.createElement('div');// contain 'add task' and 'cancel'
 
 var addtask = document.createElement('button'); // add task button this one display
   addtask.setAttribute("type", "submit"); // changed to button to see the display of the array, change too submit------------
-  addtask.textContent = 'AAccept';
+  addtask.textContent = 'Accept';
   addtask.style.width = '80px';
   addtask.style.cursor = "pointer";
   addtask.id = 'addtask';
   addtask.addEventListener('click', objectdisp); // this one lets get inputs form to new object or array
+
+var modifyok = document.createElement('button'); // modify function
+  modifyok.style.display = "none";
+  modifyok.textContent = 'Accept2';
+  modifyok.style.width = '80px';
+  modifyok.style.cursor = "pointer";
+  modifyok.id = 'modifyok';
+  modifyok.addEventListener('click', myfunction1); // modify function
 
 var cancel = document.createElement('button'); // and cancel button
   cancel.textContent = 'Cancel';
@@ -87,7 +95,7 @@ var cancel = document.createElement('button'); // and cancel button
   cancel.style.cursor = "pointer";
   cancel.addEventListener('click', formdisplay); // this one lets no form display it
 
-[addtask, cancel].forEach((item) => addcancel.appendChild(item));
+[addtask, modifyok, cancel].forEach((item) => addcancel.appendChild(item));
 [star, addcancel].forEach((item) => options.appendChild(item));
 [tittled, descripd, dated, options].forEach((item) => form.appendChild(item));
 

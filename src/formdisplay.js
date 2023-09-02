@@ -31,7 +31,6 @@ function formdisplay (){
     var form1 = document.getElementById("myform");
     form1.reset();      // inputs are blanked
     formcont.style.display = "none";
-    document.getElementById('addtask').textContent = 'Accept';
     //console.log('cancell');
   }
   if (clicked == '') {  //important or not  toggle colors red and orange

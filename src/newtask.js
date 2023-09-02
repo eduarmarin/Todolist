@@ -19,6 +19,8 @@ function prototask (tittle, description, date, important){
 }
 
 function objectdisp (){  //get data throw the accept button      //  datein, descripin, tittlein
+  var clicked = this.innerHTML;
+    //if (clicked == 'Modify') { return;}
   if (localStorage.getItem("testJSON")) {
     console.log('tasklist json file exists inside');
   } else {                                // this else: the json file is created if it doesnt exist 
