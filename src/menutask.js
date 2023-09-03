@@ -47,7 +47,7 @@ function myfunctionmenu(index, menlist1) {
 
 function myfunction1 (event){ // delete and modify options function inside each task menu
   
-  document.getElementById("menucont").style.display = 'none'; // this one turn menucont to none display
+  document.getElementById("menucont").style.display = 'none'; // this one turn menucont to none display; kind of restart
 
   let text1 = localStorage.getItem("testJSON");
   let tasklist1 = JSON.parse(text1);
@@ -58,6 +58,7 @@ function myfunction1 (event){ // delete and modify options function inside each 
       tasklist1.splice(newindex, 1);
       //tasklist.splice(newindex, 1);
       console.log('tasklist after delete ' + tasklist1); 
+      event.stopPropagation(); // this one avoid bubbling event
     }
     if (clicked == 'Modify') { // place every data is its place to be changed
 
@@ -79,14 +80,22 @@ function myfunction1 (event){ // delete and modify options function inside each 
           if (x == 'description'){document.getElementById('descripin').value = [tasklist1[newindex][x]];}
           if (x == 'date'){document.getElementById('datein').value = [tasklist1[newindex][x]];}
         }
-        //document.getElementById('addtask').textContent = 'Modify2';
-        addtask.style.display = "none";
-        modifyok.style.display = "block"; 
+        
+        addtask.style.display = "none";  // toggle accept buttons
+        modifyok.style.display = "block"; // toggle accept buttons
+        //sevent.stopPropagation(); // this one avoid bubbling event
     }
-    if (clicked == 'Accept2') {
-      console.log('modify 2');
-      var form1 = document.getElementById("myform");
-      form1.reset();      // inputs are blanked
+    if (clicked == 'Accept') { // this accept is after modify option
+
+      for (let x in tasklist1[newindex]) { 
+        if (x == 'tittle'){tasklist1[newindex][x] = document.getElementById('tittlein').value;}
+        if (x == 'description'){tasklist1[newindex][x] = document.getElementById('descripin').value;}
+        if (x == 'date'){tasklist1[newindex][x] = document.getElementById('datein').value;}
+      }
+
+      // console.log('modify tittle: ' + tittle);
+      //var form1 = document.getElementById("myform");
+      //form1.reset();      // inputs are blanked
       formcont.style.display = "none";
     }
 
@@ -96,7 +105,7 @@ function myfunction1 (event){ // delete and modify options function inside each 
   
   //window.location.reload(true);
   displaytasklist();
-  event.stopPropagation(); // this one avoid bubbling event
+  //event.stopPropagation(); // this one avoid bubbling event
 }
 
 export{myfunctionmenu, myfunction1};

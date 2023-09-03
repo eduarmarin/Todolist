@@ -18,7 +18,7 @@ function prototask (tittle, description, date, important){
     this.important = important;
 }
 
-function objectdisp (){  //get data throw the accept button      //  datein, descripin, tittlein
+function objectdisp (){  //get data throw the ----Accept---- button      //  datein, descripin, tittlein
   var clicked = this.innerHTML;
     //if (clicked == 'Modify') { return;}
   if (localStorage.getItem("testJSON")) {

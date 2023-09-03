@@ -82,8 +82,8 @@ var addtask = document.createElement('button'); // add task button this one disp
   addtask.addEventListener('click', objectdisp); // this one lets get inputs form to new object or array
 
 var modifyok = document.createElement('button'); // modify function
-  modifyok.style.display = "none";
-  modifyok.textContent = 'Accept2';
+  modifyok.style.display = "none"; // after modify option this one is displayed, -----toggled with addtask-----
+  modifyok.textContent = 'Accept';
   modifyok.style.width = '80px';
   modifyok.style.cursor = "pointer";
   modifyok.id = 'modifyok';
