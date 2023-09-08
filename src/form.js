@@ -46,6 +46,8 @@ var datei = document.createElement('input');
   datei.id = 'datein';
   datei.setAttribute('type', 'date');
   datei.setAttribute("required", "");
+  datei.setAttribute("max", "9999-01-01");
+  datei.setAttribute("min", "2022-01-01");
 [datel, datei].forEach((item) => dated.appendChild(item));
 
 var options = document.createElement('div'); //it'll contain import, another div to 'add task' and 'cancel' buttons
@@ -60,7 +62,11 @@ var star = document.createElement('div'); // import
   star.style.width = '15px';
   star.style.height = '15px';
   star.style.borderWidth = '2px';
+  star.textContent = 'color';
+  star.style.fontSize = '0.1px';
+  star.style.color = 'gray';
   star.style.borderColor = 'gray';
+  star.style.borderRadius = '50%';
   star.style.backgroundColor = 'gray';
   star.style.cursor = "pointer";
   star.addEventListener('click', formdisplay); // this one lets no form display it
@@ -75,7 +81,7 @@ var addcancel = document.createElement('div');// contain 'add task' and 'cancel'
 
 var addtask = document.createElement('button'); // add task button this one display
   addtask.setAttribute("type", "submit"); // changed to button to see the display of the array, change too submit------------
-  addtask.textContent = 'Accept';
+  addtask.textContent = 'Accept1';
   addtask.style.width = '80px';
   addtask.style.cursor = "pointer";
   addtask.id = 'addtask';
@@ -83,7 +89,7 @@ var addtask = document.createElement('button'); // add task button this one disp
 
 var modifyok = document.createElement('button'); // modify function
   modifyok.style.display = "none"; // after modify option this one is displayed, -----toggled with addtask-----
-  modifyok.textContent = 'Accept';
+  modifyok.textContent = 'Accept2';
   modifyok.style.width = '80px';
   modifyok.style.cursor = "pointer";
   modifyok.id = 'modifyok';

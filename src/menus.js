@@ -28,4 +28,4 @@ function centerdiv(item){
     item.style.flexDirection = 'column';
   }
 
-export default container;
+export  {container};

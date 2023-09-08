@@ -1,7 +1,7 @@
 // import show from './show.js';
-// import container from './menus.js';
 // import navbar from './navbar.js';
 // import maincont from './maincontainer.js';
+import {menucont} from './menutask.js';
 import {star, form, formcont} from './form.js';
 
 function formdisplay (){ 
@@ -31,13 +31,18 @@ function formdisplay (){
     var form1 = document.getElementById("myform");
     form1.reset();      // inputs are blanked
     formcont.style.display = "none";
+    document.getElementById('menucont').style.display = 'none'; // menu delete and modify
     //console.log('cancell');
   }
-  if (clicked == '') {  //important or not  toggle colors red and orange
+  if (clicked == 'color') {  //important or not  toggle colors red and orange
     var star1 = document.getElementById('star');
     if (star1.style.backgroundColor == 'gray') {
       star.style.backgroundColor = 'red';
-    }else{star.style.backgroundColor = 'gray';}
+      star.style.color = 'red';
+    }else{
+      star.style.backgroundColor = 'gray';
+      star.style.color = 'gray';
+    }
     
     //console.log('Important'); 
   }

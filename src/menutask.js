@@ -7,6 +7,8 @@ menucont.classList.add('content');
 menucont.id = 'menucont';
 menucont.style.display = 'none';
 menucont.style.position = 'absolute';
+menucont.style.top = '90%';
+menucont.style.right = '30%';
 menucont.style.overflow = 'auto';
 menucont.style.minWidth = '60px';
 menucont.style.color = 'white';
@@ -46,7 +48,8 @@ function myfunctionmenu(index, menlist1) {
 }
 
 function myfunction1 (event){ // delete and modify options function inside each task menu
-  
+  //  alert('myfunction1 funtion');
+  event.stopPropagation(); // this one avoid bubbling event
   document.getElementById("menucont").style.display = 'none'; // this one turn menucont to none display; kind of restart
 
   let text1 = localStorage.getItem("testJSON");
@@ -58,7 +61,10 @@ function myfunction1 (event){ // delete and modify options function inside each 
       tasklist1.splice(newindex, 1);
       //tasklist.splice(newindex, 1);
       console.log('tasklist after delete ' + tasklist1); 
-      event.stopPropagation(); // this one avoid bubbling event
+      
+      var myjson = JSON.stringify(tasklist1);
+      localStorage.setItem("testJSON", myjson);
+      displaytasklist();
     }
     if (clicked == 'Modify') { // place every data is its place to be changed
 
@@ -83,10 +89,10 @@ function myfunction1 (event){ // delete and modify options function inside each 
         
         addtask.style.display = "none";  // toggle accept buttons
         modifyok.style.display = "block"; // toggle accept buttons
-        //sevent.stopPropagation(); // this one avoid bubbling event
+        console.log('modify option'); 
     }
-    if (clicked == 'Accept') { // this accept is after modify option
-
+    if (clicked == 'Accept2') { // accept after modify option
+      //alert('accept modify');
       for (let x in tasklist1[newindex]) { 
         if (x == 'tittle'){tasklist1[newindex][x] = document.getElementById('tittlein').value;}
         if (x == 'description'){tasklist1[newindex][x] = document.getElementById('descripin').value;}
@@ -97,15 +103,11 @@ function myfunction1 (event){ // delete and modify options function inside each 
       //var form1 = document.getElementById("myform");
       //form1.reset();      // inputs are blanked
       formcont.style.display = "none";
+      //event.stopPropagation(); // this one avoid bubbling event
+      var myjson = JSON.stringify(tasklist1);
+      localStorage.setItem("testJSON", myjson);
+      displaytasklist();
     }
-
-  var myjson = JSON.stringify(tasklist1);
-  localStorage.setItem("testJSON", myjson);
-  //console.log('testJSON ' + myjson);
-  
-  //window.location.reload(true);
-  displaytasklist();
-  //event.stopPropagation(); // this one avoid bubbling event
 }
 
-export{myfunctionmenu, myfunction1};
+export{myfunctionmenu, myfunction1, menucont};
