@@ -7,7 +7,7 @@ odinlogo.style.cursor = "pointer";
 
 var navbar = document.createElement('nav'); // this one create the navbar
 navbar.style.width = "80%";                // and styles it 
-navbar.style.height = "200px";
+navbar.style.height = "120px";
 navbar.style.background = "gray";
 navbar.style.color = "black";
 navbar.style.display = "flex";
@@ -31,13 +31,13 @@ div1.appendChild(divlogo);
 var link = document.createElement('link'); //this one allow to add google font family, after the equal and using 
 link.setAttribute('rel', 'stylesheet');    // the symbol '|' to separate them
 link.setAttribute('type', 'text/css');
-link.setAttribute('href', 'https://fonts.googleapis.com/css?family=Tangerine|Courgette');
+link.setAttribute('href', 'https://fonts.googleapis.com/css?family=Tangerine|Courgette|Lato|Playfair+Display');
 document.head.appendChild(link);
 
 var divname = document.createElement('div'); // for name
 divname.innerHTML = "Odin Todolist";
-divname.style.fontFamily = 'Tangerine, serif';
-divname.style.fontSize = "5rem";
+divname.style.fontFamily = 'Courgette, serif';
+divname.style.fontSize = "3rem";
 divname.style.cursor = "pointer";
 //divname.addEventListener('click', menunavbar); // this one go to every menu page/link
 
@@ -93,7 +93,8 @@ div1.appendChild(divname);
   navbar.style.height = "auto";
   navbar.style.padding = "0px";
   
-  divname.style.fontSize = "3rem";
+  divname.style.fontSize = "2rem";
+  div1.style.marginLeft = "-10px";
   // div2.style.marginRight = "0px";
   // div2.style.width = "100%";
   // div1.style.width = "100%";

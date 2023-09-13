@@ -12,7 +12,7 @@ image2.style.marginLeft = "10px";
 
 var footer = document.createElement('footer');
 centeritems(footer);
-footer.style.width = "100%";    
+footer.style.width = "80%";    
 //footer.style.position = "absolute";    
 footer.style.height = "120px";
 footer.style.background = "gray";

@@ -73,7 +73,7 @@ function displaytasklist(){
     divcont1.style.border = 'solid';
     divcont1.style.borderColor = 'lightgray';
     divcont1.style.borderWidth = '1px';
-    divcont1.style.gap = '4px';
+    divcont1.style.gap = '2%';
     divcont1.style.paddingLeft = '1%';
     divcont1.style.paddingRight = '1%';
     divcont1.style.width = '95%';
@@ -119,7 +119,7 @@ function displaytasklist(){
         divcontimp.style.borderColor = 'white';
         divcontimp.classList.add('divcontimp');
         //if (window.matchMedia("(max-width: 600px)").matches) { mediafunction}
-        if (tasklist1[i][x] == true) { divcontimp.style.backgroundColor = 'green';
+        if (tasklist1[i][x] == true) { divcontimp.style.backgroundColor = '#e8ad09';
           }else{divcontimp.style.backgroundColor = 'gray';}
       }
       var divmenu = document.createElement('div');

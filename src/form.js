@@ -81,7 +81,7 @@ var addcancel = document.createElement('div');// contain 'add task' and 'cancel'
 
 var addtask = document.createElement('button'); // add task button this one display
   addtask.setAttribute("type", "submit"); // changed to button to see the display of the array, change too submit------------
-  addtask.textContent = 'Accept1';
+  addtask.textContent = 'Accept';
   addtask.style.width = '80px';
   addtask.style.cursor = "pointer";
   addtask.id = 'addtask';
@@ -89,7 +89,7 @@ var addtask = document.createElement('button'); // add task button this one disp
 
 var modifyok = document.createElement('button'); // modify function
   modifyok.style.display = "none"; // after modify option this one is displayed, -----toggled with addtask-----
-  modifyok.textContent = 'Accept2';
+  modifyok.textContent = 'Accept';
   modifyok.style.width = '80px';
   modifyok.style.cursor = "pointer";
   modifyok.id = 'modifyok';

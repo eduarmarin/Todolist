@@ -91,7 +91,7 @@ function myfunction1 (event){ // delete and modify options function inside each 
         modifyok.style.display = "block"; // toggle accept buttons
         console.log('modify option'); 
     }
-    if (clicked == 'Accept2') { // accept after modify option
+    if (clicked == 'Accept') { // accept after modify option
       //alert('accept modify');
       for (let x in tasklist1[newindex]) { 
         if (x == 'tittle'){tasklist1[newindex][x] = document.getElementById('tittlein').value;}
